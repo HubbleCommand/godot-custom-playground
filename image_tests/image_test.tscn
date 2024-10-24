@@ -1,0 +1,290 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmvyjp1sco24c"]
+
+[ext_resource type="Texture2D" uid="uid://dgnrmkf8ijs31" path="res://image_tests/SMPTE_Color_Bars.svg.png" id="1_2cw3a"]
+[ext_resource type="Script" path="res://image_tests/camera_2d.gd" id="1_kofl0"]
+[ext_resource type="Script" path="res://image_tests/CropOriginal.gd" id="2_pysfw"]
+[ext_resource type="Script" path="res://image_tests/CropNew.gd" id="3_ib6ga"]
+[ext_resource type="Script" path="res://image_tests/CropAdded.gd" id="3_v1f7j"]
+[ext_resource type="Script" path="res://image_tests/CropAddedGrow.gd" id="4_76dcy"]
+[ext_resource type="Script" path="res://image_tests/Shear.gd" id="4_x1ror"]
+[ext_resource type="Script" path="res://image_tests/Rotate.gd" id="5_1ce34"]
+[ext_resource type="Script" path="res://image_tests/CropNewGrow.gd" id="5_cacme"]
+[ext_resource type="Script" path="res://image_tests/Resize.gd" id="6_mwynp"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(769, 432)
+script = ExtResource("1_kofl0")
+
+[node name="Unmodified" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2cw3a")
+
+[node name="Label" type="Label" parent="Unmodified"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Unmodified
+"
+
+[node name="CropOriginal" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -240.0
+offset_right = 160.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_2cw3a")
+script = ExtResource("2_pysfw")
+
+[node name="Label" type="Label" parent="CropOriginal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Crop Original"
+
+[node name="CropAdded" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_right = 160.0
+offset_bottom = 240.0
+grow_horizontal = 2
+texture = ExtResource("1_2cw3a")
+script = ExtResource("3_v1f7j")
+
+[node name="Label" type="Label" parent="CropAdded"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Crop Added"
+
+[node name="CropAddedGrow" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -120.0
+offset_bottom = 120.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_2cw3a")
+expand_mode = 1
+stretch_mode = 2
+script = ExtResource("4_76dcy")
+
+[node name="Label" type="Label" parent="CropAddedGrow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Crop Added Grow"
+
+[node name="CropNew" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -321.0
+offset_bottom = 115.0
+grow_horizontal = 0
+texture = ExtResource("1_2cw3a")
+expand_mode = 1
+stretch_mode = 2
+script = ExtResource("3_ib6ga")
+
+[node name="Label" type="Label" parent="CropNew"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Crop New"
+
+[node name="CropNewGrow" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 359.0
+offset_bottom = 115.0
+texture = ExtResource("1_2cw3a")
+expand_mode = 1
+stretch_mode = 2
+script = ExtResource("5_cacme")
+
+[node name="Label" type="Label" parent="CropNewGrow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Crop New Grow"
+
+[node name="Shear" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_vertical = 2
+texture = ExtResource("1_2cw3a")
+expand_mode = 1
+stretch_mode = 2
+script = ExtResource("4_x1ror")
+shear_factor = -0.18
+process = true
+
+[node name="Label" type="Label" parent="Shear"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -11.5
+offset_right = 22.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Shear"
+
+[node name="Rotate" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -256.0
+offset_right = 256.0
+grow_vertical = 0
+texture = ExtResource("1_2cw3a")
+expand_mode = 1
+stretch_mode = 2
+script = ExtResource("5_1ce34")
+rotation_speed = 2.82
+
+[node name="Label" type="Label" parent="Rotate"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Rotate"
+
+[node name="Resize" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -256.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_2cw3a")
+script = ExtResource("6_mwynp")
+
+[node name="Label" type="Label" parent="Resize"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resize"
