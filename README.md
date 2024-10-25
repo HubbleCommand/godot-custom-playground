@@ -9,3 +9,6 @@ Tests for cropping, shearing, rotating
 
 ## Canvas Tests (defunct)
 Tests for custom drawing conic shapes
+
+Defunt as at it's core, all shapes are just polygons/polylines,
+so no real point in doing conics in the engine

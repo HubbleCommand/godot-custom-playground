@@ -214,7 +214,6 @@ expand_mode = 1
 stretch_mode = 2
 script = ExtResource("4_x1ror")
 shear_factor = -0.18
-process = true
 
 [node name="Label" type="Label" parent="Shear"]
 layout_mode = 1
@@ -243,7 +242,7 @@ texture = ExtResource("1_2cw3a")
 expand_mode = 1
 stretch_mode = 2
 script = ExtResource("5_1ce34")
-rotation_speed = 2.82
+rotation_speed = 1.4
 
 [node name="Label" type="Label" parent="Rotate"]
 layout_mode = 1
